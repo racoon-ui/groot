@@ -1,0 +1,25 @@
+{
+  "name": "@racoon-ui/ui-stylelint-config",
+  "version": "1.0.0",
+  "description": "A UI shared stylelint config made by Racoon UI.",
+  "author": "we are racoons",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "scripts": {
+    "lint": "ui-test --lint",
+    "lint:fix": "ui-test --lint --fix"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-declaration-strict-value": "^1.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
