@@ -21,8 +21,12 @@
     "start": "lerna run start --stream",
     "start:watch": "lerna run start:watch --stream",
     "dev": "yarn start:watch",
+    "clean:modules": "lerna clean --yes",
+    "bootstrap": "npm-run-all clean:modules install:packages clean build",
+    "build": "lerna run build --stream",
+    "install:packages": "lerna bootstrap --reject-cycles",
     "clean": "lerna run clean --stream",
-    "clean:modules": "lerna clean --yes"
+    "lint:staged": "lerna exec --stream lint-staged"
   },
   "resolutions": {
     "@babel/core": "^7.4.3",
