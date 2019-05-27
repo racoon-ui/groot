@@ -16,7 +16,7 @@ racoon-ui react components 를 사용하기 위해서는 다음과 같은 순서
 예시:
 
 ```bash
-$ yarn add @racoon/ui-themes @racoon/ui-elements
+$ yarn add @racoon/core
 ```
 
 ```javascript
