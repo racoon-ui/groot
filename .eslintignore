@@ -1,0 +1,7 @@
+/node_modules/**
+/coverage/**
+karma.conf.js
+postcss.config.js
+stylelint.config.js
+tests.bundle.js
+babel.config.js
