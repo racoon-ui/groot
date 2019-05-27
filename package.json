@@ -26,6 +26,7 @@
     "build": "lerna run build --stream",
     "install:packages": "lerna bootstrap --reject-cycles",
     "clean": "lerna run clean --stream",
+    "lint": "lerna run lint --stream",
     "lint:staged": "lerna exec --stream lint-staged"
   },
   "resolutions": {
