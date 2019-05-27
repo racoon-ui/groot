@@ -1,0 +1,15 @@
+{
+  "name": "@racoon-ui/supported-browsers",
+  "version": "1.0.0",
+  "description": "The official list of browsers supported",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "scripts": {
+    "test": "node --eval \"assert(require('.').includes('ie >= 11'))\""
+  },
+  "license": "MIT"
+}

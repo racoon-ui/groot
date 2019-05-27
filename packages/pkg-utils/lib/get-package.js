@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Racoon-UI, Inc.
+ * Copyright (c) 2019 Racoon-UI, Inc
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,4 +22,34 @@
  * SOFTWARE.
  */
 
-module.exports = require('@racoon-ui/ui-eslint-config')
+const fs = require('fs')
+const path = require('path')
+const readPkgUp = require('read-pkg-up')
+const Package = require('@lerna/package')
+
+exports.getPackage = function getPackage (options) {
+  const result = readPackage(options)
+  return new Package(result.pkg, path.dirname(result.path))
+}
+
+exports.getPackageJSON = function getPackageJSON (options) {
+  return readPackage(options).pkg
+}
+
+exports.getPackagePath = function getPackagePath (options) {
+  return readPackage(options).path
+}
+
+function readPackage (options) {
+  // eslint-disable-next-line no-param-reassign
+  options = {
+    cwd: process.cwd(),
+    normalize: false,
+    ...options
+  }
+  return readPkgUp.sync({
+    cwd: fs.realpathSync(options.cwd),
+    normalize: options.normalize
+  })
+}
+exports.readPackage = readPackage

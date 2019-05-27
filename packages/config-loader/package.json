@@ -1,0 +1,19 @@
+{
+  "name": "@racoon-ui/config-loader",
+  "version": "1.0.0",
+  "description": "A library to load config files",
+  "main": "./lib/index.js",
+  "scripts": {
+    "lint": "ui-test --lint",
+    "lint:fix": "ui-test --lint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

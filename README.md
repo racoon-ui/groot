@@ -16,18 +16,18 @@ racoon-ui react components 를 사용하기 위해서는 다음과 같은 순서
 예시:
 
 ```bash
-$ yarn add @racoon/core
+$ yarn add @racoon-ui/core
 ```
 
 ```javascript
 import React, { Component } from 'react'
-import Heading from '@racoon/core/Heading'
+import Heading from '@racoon-ui/core/Heading'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Heading>Now using Stunitas-UI components</Heading>
+        <Heading>Now using racoon-ui components</Heading>
       </div>
     )
   }

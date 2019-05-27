@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Racoon-UI, Inc.
+ * Copyright (c) 2019 Racoon-UI, Inc
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,4 +22,13 @@
  * SOFTWARE.
  */
 
-module.exports = require('@racoon-ui/ui-eslint-config')
+module.exports = [
+  'last 2 chrome versions',
+  'last 2 firefox versions',
+  'last 2 edge versions',
+  'last 2 ios versions',
+  'last 2 opera versions',
+  'last 2 safari versions',
+  'last 2 ChromeAndroid versions',
+  'ie >= 11'
+]

@@ -3,12 +3,12 @@
   "description": "UI libraries made by Racoons of ST Unitas",
   "private": true,
   "version": "1.0.0",
-  "author": "ST Unitas, Inc. Tutor Dev Team",
+  "author": "we are racoons",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/racoon-ui/groot.git"
   },
-  "bugs": "",
+  "bugs": "https://github.com/racoon-ui/groot/issues",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -21,8 +21,13 @@
     "start": "lerna run start --stream",
     "start:watch": "lerna run start:watch --stream",
     "dev": "yarn start:watch",
+    "clean:modules": "lerna clean --yes",
+    "bootstrap": "npm-run-all clean:modules install:packages clean build",
+    "build": "lerna run build --stream",
+    "install:packages": "lerna bootstrap --reject-cycles",
     "clean": "lerna run clean --stream",
-    "clean:modules": "lerna clean --yes"
+    "lint": "lerna run lint --stream",
+    "lint:staged": "lerna exec --stream lint-staged"
   },
   "resolutions": {
     "@babel/core": "^7.4.3",
@@ -49,5 +54,8 @@
     "hooks": {
       "pre-commit": "yarn lint:staged"
     }
+  },
+  "dependencies": {
+    "eslint": "^5.16.0"
   }
 }

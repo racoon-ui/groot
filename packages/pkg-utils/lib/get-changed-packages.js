@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Racoon-UI, Inc.
+ * Copyright (c) 2019 Racoon-UI, Inc
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,4 +22,20 @@
  * SOFTWARE.
  */
 
-module.exports = require('@racoon-ui/ui-eslint-config')
+const { runCommandSync } = require('@racoon-ui/command-utils')
+const path = require('path')
+const getPackages = require('./get-packages')
+
+module.exports = function getChangedPackages (commitIsh = 'HEAD^1', allPackages) {
+  allPackages = allPackages || getPackages() // eslint-disable-line no-param-reassign
+
+  const result = runCommandSync('git', ['diff', commitIsh, '--name-only'], [], { stdio: 'pipe' }).stdout
+  const changedFiles = result.split('\n')
+
+  return allPackages
+    .filter((pkg) => {
+      const relativePath = path.relative('.', pkg.location) + path.sep
+      return changedFiles
+        .findIndex(changedFile => changedFile.startsWith(relativePath)) >= 0
+    })
+}
