@@ -1,0 +1,17 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+lerna-debug.log
+coverage/
+package-lock.json
+.yarnclean
+.babel-cache
+__build__
+.vscode
+.idea
+.DS_Store
+.viminfo
+.npmrc
+.env
+.env.test
+.tmp/
