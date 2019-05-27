@@ -3,12 +3,12 @@
   "description": "UI libraries made by Racoons of ST Unitas",
   "private": true,
   "version": "1.0.0",
-  "author": "ST Unitas, Inc. Tutor Dev Team",
+  "author": "we are racoons",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/racoon-ui/groot.git"
   },
-  "bugs": "",
+  "bugs": "https://github.com/racoon-ui/groot/issues",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -54,5 +54,8 @@
     "hooks": {
       "pre-commit": "yarn lint:staged"
     }
+  },
+  "dependencies": {
+    "eslint": "^5.16.0"
   }
 }

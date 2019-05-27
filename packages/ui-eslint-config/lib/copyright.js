@@ -22,4 +22,3 @@
  * SOFTWARE.
  */
 
-module.exports = require('@racoon-ui/ui-eslint-config')

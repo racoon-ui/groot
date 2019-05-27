@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-racoon-ui",
+  "description": "An eslint plugin",
+  "version": "1.0.0",
+  "author": "we are racoons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "main": "./lib/index.js",
+  "scripts": {
+    "lint": "ui-test --lint",
+    "lint:fix": "ui-test --lint --fix"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@racoon-ui/pkg-utils": "^1",
+    "eslint-module-utils": "^2.3.0",
+    "eslint-plugin-import": "^2.17.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

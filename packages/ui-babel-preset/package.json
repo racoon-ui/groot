@@ -1,0 +1,45 @@
+{
+  "name": "@racoon-ui/ui-babel-preset",
+  "version": "1.0.0",
+  "description": "UI libraries made by Racoons of ST Unitas",
+  "author": "we are racoons",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "scripts": {
+    "lint": "ui-test --lint",
+    "lint:fix": "ui-test --lint --fix"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-classes": "^7.4.3",
+    "@babel/plugin-transform-destructuring": "^7.4.3",
+    "@babel/plugin-transform-react-constant-elements": "^7.2.0",
+    "@babel/plugin-transform-react-display-name": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@racoon-ui/supported-browsers": "^1",
+    "@racoon-ui/config-loader": "^1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-macros": "^2.5.1",
+    "babel-plugin-transform-ensure-ignore": "^0.1.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-plugin-transform-undefined-to-void": "^6.9.4",
+    "core-js": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

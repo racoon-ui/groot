@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Racoon-UI, Inc.
+ * Copyright (c) 2019 Racoon-UI, Inc
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,4 +22,15 @@
  * SOFTWARE.
  */
 
-module.exports = require('@racoon-ui/ui-eslint-config')
+const { readPackage, getPackage, getPackageJSON, getPackagePath } = require('./get-package')
+
+module.exports =  {
+  getPackages: require('./get-packages'),
+  getChangedPackages: require('./get-changed-packages'),
+  readPkgUp: require('read-pkg-up'),
+  readPkg: getPackageJSON,
+  readPackage,
+  getPackage,
+  getPackageJSON,
+  getPackagePath
+}

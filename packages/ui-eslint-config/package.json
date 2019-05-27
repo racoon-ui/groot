@@ -1,0 +1,30 @@
+{
+  "name": "@racoon-ui/ui-eslint-config",
+  "version": "1.0.0",
+  "description": "UI libraries made by Racoons of ST Unitas",
+  "author": "we are racoons",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "scripts": {
+    "lint": "ui-test --lint",
+    "lint:fix": "ui-test --lint --fix"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-racoon-ui": "^1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-mocha": "^5.2.1",
+    "eslint-plugin-notice": "^0.7.8",
+    "eslint-plugin-react": "^7.12.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

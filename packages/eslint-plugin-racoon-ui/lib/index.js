@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Racoon-UI, Inc.
+ * Copyright (c) 2015 - present ST Unitas, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,4 +22,14 @@
  * SOFTWARE.
  */
 
-module.exports = require('@racoon-ui/ui-eslint-config')
+module.exports.rules = {
+  'no-relative-package-imports': require('./rules/no-relative-package-imports')
+}
+
+module.exports.configs = {
+  recommended: {
+    rules: {
+      'racoon-ui/no-relative-package-imports': 2
+    }
+  }
+}
