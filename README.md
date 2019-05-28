@@ -7,7 +7,9 @@
 <h1 align="center">Racoon-UI</h1>
 
 <div align="center">
+
 [React](http://facebook.github.io/react/) components made by Racoon UI Team
+
 </div>
 
 ## Usage
