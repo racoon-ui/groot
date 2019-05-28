@@ -4,7 +4,11 @@
   </a>
 </p>
 
-<h2 align="center">Racoon-UI</h2>
+<h1 align="center">Racoon-UI</h1>
+
+<div align="center">
+[React](http://facebook.github.io/react/) components made by Racoon UI Team
+</div>
 
 ## Usage
 
