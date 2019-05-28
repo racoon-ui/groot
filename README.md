@@ -55,7 +55,6 @@ export default App
 
 ## Browser Support
 
-- Material UI 4.0 지원하는 브라우저를 함께 지원합니다.
 - Internet Explorer 11 and Edge
 - Chrome, Safari, Firefox (last two versions)
 
