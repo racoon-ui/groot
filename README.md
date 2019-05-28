@@ -48,7 +48,7 @@ export default App
 - [x] eslint configure
 - [x] stylelint configure
 - [x] eslint plugin configure
-- [ ] webpack configure
+- [x] webpack configure
 - [ ] racoon-ui core components
 - [ ] racoon-ui icons
 - [ ] themeable component
