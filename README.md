@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://" rel="noopener" target="_blank">
+  <a href="https://github.com/racoon-ui/groot" rel="noopener" target="_blank">
     <img width="150" src="https://s3.ap-northeast-2.amazonaws.com/s3-stunitas/racoon-ui/logo.png" alt="racoon-ui logo">
   </a>
 </p>
