@@ -1,8 +1,12 @@
----
-id: racoon-ui
----
+<p align="center">
+  <a href="https://" rel="noopener" target="_blank">
+    <img width="150" src="https://s3.ap-northeast-2.amazonaws.com/s3-stunitas/racoon-ui/logo.png" alt="racoon-ui logo">
+  </a>
+</p>
 
-### Usage
+<h1 align="center">Racoon-UI</h1>
+
+## Usage
 
 racoon-ui 는 ST Unitas 내 Tutor Team 에서 react 를 이용하여 재활용 가능한 컴포넌트를 만드는 것을 목적으로 제작이 되었습니다.
 
@@ -36,12 +40,12 @@ class App extends Component {
 export default App
 ```
 
-### Browser Support
+## Browser Support
 
 - Material UI 4.0 지원하는 브라우저를 함께 지원합니다.
 - Internet Explorer 11 and Edge
 - Chrome, Safari, Firefox (last two versions)
 
-### License
+## License
 
 [MIT](LICENSE)
