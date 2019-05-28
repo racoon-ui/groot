@@ -43,6 +43,7 @@ export default App
 
 ## TODO List
 
+- [x] mono repo configure with lerna
 - [x] babel-preset configure
 - [x] eslint configure
 - [x] stylelint configure
