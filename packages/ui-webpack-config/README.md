@@ -14,7 +14,7 @@ yarn add @racoon-ui/ui-webpack-config
 
 ## Usage
 
-In your Webpack config file:
+여러분의 webpack 설정에 다음과 같이 포함시켜 사용할 수 있습니다.
 
 ```js
 /* webpack.config.js */

@@ -4,7 +4,7 @@ category: packages
 
 ## ui-stylelint-config
 
-A shared stylelint config made by Racoon UI
+Racoon UI 에서 제공하는 stylelint preset 설정입니다.
 
 ### Installation
 
@@ -14,7 +14,7 @@ yarn add @racoon-ui/ui-stylelint-config
 
 ### Usage
 
-In your stylelint config file:
+여러분의 stylelint 설정에 다음과 같이 설정하세요.
 
 ```js
 /* stylelint.config.js */
