@@ -4,6 +4,8 @@ category: packages
 
 ## ui-eslint-config
 
+Racoon UI 에서 제공하는 eslint preset 설정입니다.
+
 ### Installation
 
 ```sh
