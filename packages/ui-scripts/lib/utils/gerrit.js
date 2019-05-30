@@ -22,49 +22,39 @@
  * SOFTWARE.
  */
 
-// import Button from '@material-ui/core/Button'
+const GerritBot = require('gerritbot')
+const { error } = require('@racoon-ui/command-utils')
 
-// export default Button
+const {
+  SSH_USERNAME,
+  GERRIT_HOST,
+  GERRIT_PORT,
+  SSH_KEY_PATH
+} = process.env
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
+let gerrit
 
-const styles = {
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  },
+function gerritClient () {
+  if (!gerrit) {
+    gerrit = new GerritBot.Client({
+      user: SSH_USERNAME,
+      host: GERRIT_HOST,
+      keyFile: SSH_KEY_PATH,
+      sshPort: parseInt(GERRIT_PORT)
+    })
+  }
+  return gerrit
 }
 
-function ClassNames(props) {
-  const { classes, children, className, ...other } = props
-
-  return (
-    <Button className={classNames(classes.root, className)} {...other}>
-      {children || 'class names'}
-    </Button>
-  )
+exports.postGerritReview  = async function postGerritReview (target, message, labels = {}) {
+  return new Promise((resolve, reject) => {
+    gerritClient().review(target, { message, labels }, (err) => {
+      if (err) {
+        error(`An error occured posting a gerrit review for ${target}.`)
+        error(err)
+        reject(err)
+      }
+      resolve()
+    })
+  })
 }
-
-ClassNames.defaultProps = {
-  children: null,
-  className: ''
-}
-
-ClassNames.propTypes = {
-  children: PropTypes.node,
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-}
-
-export default withStyles(styles, { name: 'st-button' })(ClassNames)
-
-

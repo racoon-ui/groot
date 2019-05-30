@@ -22,49 +22,35 @@
  * SOFTWARE.
  */
 
-// import Button from '@material-ui/core/Button'
+const { getPackageJSON } = require('@racoon-ui/pkg-utils')
+const { error, info } = require('@racoon-ui/command-utils')
 
-// export default Button
+const { publishGithubPages } = require('./utils/gh-pages')
+const { getConfig } = require('./utils/config')
+const { setupGit, isReleaseCommit, checkWorkingDirectory } = require('./utils/git')
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-
-const styles = {
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  },
+try {
+  const pkgJSON = getPackageJSON()
+  deployDocs(pkgJSON.name, pkgJSON.version, getConfig(pkgJSON))
+} catch (err) {
+  error(err)
+  process.exit(1)
 }
 
-function ClassNames(props) {
-  const { classes, children, className, ...other } = props
+function deployDocs (packageName, currentVersion, config = {}) {
+  setupGit()
 
-  return (
-    <Button className={classNames(classes.root, className)} {...other}>
-      {children || 'class names'}
-    </Button>
-  )
+  if (isReleaseCommit(currentVersion)) {
+    checkWorkingDirectory()
+    info(`📖   Deploying documentation for ${currentVersion} of ${packageName}...`)
+    try {
+      publishGithubPages(config)
+    } catch (err) {
+      error(err)
+      process.exit(1)
+    }
+    info(`📖   Documentation for ${currentVersion} of ${packageName} was successfully deployed!`)
+  } else {
+    info(`📦  Not on a release commit--skipping documentation publish.`)
+  }
 }
-
-ClassNames.defaultProps = {
-  children: null,
-  className: ''
-}
-
-ClassNames.propTypes = {
-  children: PropTypes.node,
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-}
-
-export default withStyles(styles, { name: 'st-button' })(ClassNames)
-
-

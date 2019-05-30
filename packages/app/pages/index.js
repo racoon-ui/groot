@@ -28,13 +28,10 @@ import { withStyles, Button } from '@racoon-ui/ui-core'
 
 const styles = theme => ({
   root: {
-    width: '100%'
+    // width: '100%'
   },
   button: {
     margin: theme.spacing.unit
-  },
-  input: {
-    display: 'none'
   }
 })
 

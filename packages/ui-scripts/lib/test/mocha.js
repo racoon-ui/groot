@@ -22,49 +22,37 @@
  * SOFTWARE.
  */
 
-// import Button from '@material-ui/core/Button'
+const fs = require('fs')
+const path = require('path')
+const { runCommandsConcurrently, getCommand, resolveBin } = require('@racoon-ui/command-utils')
 
-// export default Button
+let command = 'mocha'
+let args = [
+  '**/*.test.js',
+  '--colors',
+  '--require', '@racoon-ui/mocha-environment-jsdom',
+  '--exit'
+]
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
+const optsPath = path.resolve(process.cwd(), 'mocha.opts')
 
-const styles = {
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  },
+if (fs.existsSync(optsPath)) {
+  args.push(`--opts ${optsPath}`)
 }
 
-function ClassNames(props) {
-  const { classes, children, className, ...other } = props
+const vars = [`NODE_ENV=test`]
 
-  return (
-    <Button className={classNames(classes.root, className)} {...other}>
-      {children || 'class names'}
-    </Button>
-  )
+if (process.argv.includes('--watch')) {
+  args.push('--watch')
+} else if (process.argv.includes('--coverage')) {
+  command = 'nyc'
+  args = [
+    resolveBin('mocha')
+  ].concat(args)
 }
 
-ClassNames.defaultProps = {
-  children: null,
-  className: ''
+const commands = {
+  node: getCommand(command, args, vars)
 }
 
-ClassNames.propTypes = {
-  children: PropTypes.node,
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-}
-
-export default withStyles(styles, { name: 'st-button' })(ClassNames)
-
-
+process.exit(runCommandsConcurrently(commands).status)

@@ -1,7 +1,7 @@
 {
   "name": "@dante/conects-app",
   "license": "MIT",
-  "author": "dante@stunitas.com",
+  "author": "dante@racoon-ui.com",
   "version": "1.0.0",
   "scripts": {
     "build": "next build",

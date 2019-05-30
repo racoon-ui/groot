@@ -24,12 +24,10 @@
 
 import React from 'react'
 import App, { Container } from 'next/app'
-// import { ApolloProvider } from 'react-apollo'
 import JssProvider from 'react-jss/lib/JssProvider'
 import NextSeo from 'next-seo'
 import { CssBaseline, MuiThemeProvider } from '@racoon-ui/ui-core'
 
-// import withApollo from '../lib/withApollo'
 import SEO from '../next-seo.config'
 import GlobalStyle from '../lib/styles/global-styles'
 import getPageContext from '../lib/material-ui/getPageContext'
