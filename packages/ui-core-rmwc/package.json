@@ -1,10 +1,10 @@
 {
-  "name": "@racoon-ui/ui-core-material",
+  "name": "@racoon-ui/ui-core-rmwc",
   "version": "1.0.0",
-  "description": "A collection of components to make a site",
   "author": "we are racoons",
   "main": "./lib/index.js",
   "module": "./es/index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/racoon-ui/groot.git"
@@ -17,17 +17,14 @@
     "build": "ui-build",
     "build:watch": "ui-build --watch"
   },
-  "license": "MIT",
+  "dependencies": {
+    "@rmwc/button": "^5.5.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rmwc": "^5.5.2"
+  },
   "devDependencies": {
     "@racoon-ui/ui-babel-preset": "^1"
-  },
-  "dependencies": {
-    "@material-ui/core": "^3.9.3",
-    "classnames": "^2.2.6",
-    "prop-types": "^15.6.1",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "styled-components": "^4.2.0"
   },
   "peerDependencies": {
     "react": "^0.14.9 || ^15 || ^16",

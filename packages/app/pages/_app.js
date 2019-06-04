@@ -26,7 +26,7 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import JssProvider from 'react-jss/lib/JssProvider'
 import NextSeo from 'next-seo'
-import { CssBaseline, MuiThemeProvider } from '@racoon-ui/ui-core'
+import { CssBaseline, MuiThemeProvider } from '@racoon-ui/ui-core-material'
 
 import SEO from '../next-seo.config'
 import GlobalStyle from '../lib/styles/global-styles'

@@ -9,7 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@racoon-ui/ui-core": "^1",
+    "@racoon-ui/ui-core-material": "^1",
+    "@racoon-ui/ui-core-rmwc": "^1",
     "isomorphic-unfetch": "^2.0.0",
     "jss": "^9.8.7",
     "next": "^8.0.3",

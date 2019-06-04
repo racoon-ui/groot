@@ -24,7 +24,8 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles, Button } from '@racoon-ui/ui-core'
+import { withStyles } from '@racoon-ui/ui-core-material'
+import { Button } from '@racoon-ui/ui-core-rmwc'
 
 const styles = theme => ({
   root: {

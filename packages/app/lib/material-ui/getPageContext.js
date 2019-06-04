@@ -23,7 +23,7 @@
  */
 
 import { SheetsRegistry } from 'jss'
-import { createGenerateClassName } from '@racoon-ui/ui-core'
+import { createGenerateClassName } from '@racoon-ui/ui-core-material'
 import theme from '../styles/mui-theme'
 
 /**

@@ -22,35 +22,4 @@
  * SOFTWARE.
  */
 
-import { createMuiTheme, colors } from '@racoon-ui/ui-core-material'
-
-/**
- * Theme 를 적용하려면 아래의 항목을 변경하면 됩니다.
- * theme 에 대한 자세한 내용은 material theme 를 참고하세요.
- * https://material-ui.com/customization/themes/
- */
-
-const theme = createMuiTheme({
-  props: {
-    MuiButtonBase: {
-      disableRipple: true
-    }
-  },
-  palette: {
-    primary: {
-      light: colors.blueGrey[300],
-      main: colors.blueGrey[900],
-      dark: colors.blueGrey[700]
-    },
-    secondary: {
-      light: colors.blueGrey[300],
-      main: colors.deepPurple[400],
-      dark: colors.blueGrey[700]
-    }
-  },
-  typography: {
-    useNextVariants: true
-  }
-})
-
-export default theme
+export { default as Button } from './components/Button'
