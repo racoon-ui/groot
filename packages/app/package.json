@@ -1,0 +1,27 @@
+{
+  "name": "@dante/conects-app",
+  "license": "MIT",
+  "author": "dante@racoon-ui.com",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@racoon-ui/ui-core": "^1",
+    "isomorphic-unfetch": "^2.0.0",
+    "jss": "^9.8.7",
+    "next": "^8.0.3",
+    "next-seo": "^1.11.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-jss": "^8.6.1",
+    "styled-components": "^4.2.0",
+    "styled-jsx": "^3.2.1"
+  },
+  "devDependencies": {
+    "@racoon-ui/ui-babel-preset": "^1"
+  }
+}
