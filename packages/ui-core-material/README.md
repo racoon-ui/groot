@@ -9,22 +9,18 @@ Material UI 4.0 기반의 racoon-ui core components 입니다.
 ### Installation
 
 ```sh
-yarn add @racoon-ui/ui-core
+yarn add @racoon-ui/ui-core-material
 ```
 
 ### Usage
 
 ```js
 import React from 'react'
-import AppBar from '@racoon-ui/ui-core/AppBar'
+import AppBar from '@racoon-ui/ui-core-material/AppBar'
 
-export default MyComponent = function () {
-  return (
-    <AppBar>
-      Presentational content goes here
-    </AppBar>
-  )
-}
+export default (MyComponent = function() {
+  return <AppBar>Presentational content goes here</AppBar>
+})
 ```
 
 ### License
