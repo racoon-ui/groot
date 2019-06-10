@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { createMuiTheme, colors } from '@racoon-ui/ui-core'
+import { createMuiTheme, colors } from '@racoon-ui/ui-core-material'
 
 /**
  * Theme 를 적용하려면 아래의 항목을 변경하면 됩니다.
