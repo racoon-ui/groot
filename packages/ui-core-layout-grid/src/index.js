@@ -24,4 +24,4 @@
 import styled from 'styled-components'
 import { Grid, GridCell, GridInner } from '@rmwc/grid'
 
-export default { Grid, GridCell, GridInner }
+export { Grid, GridCell, GridInner }

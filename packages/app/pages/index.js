@@ -41,11 +41,11 @@ class Index extends React.Component {
     const { classes } = this.props
     return (
       <div className={classes.root}>
-        {/* <Grid>
+        <Grid>
           <GridCell span={4}>1</GridCell>
           <GridCell span={4}>2</GridCell>
           <GridCell span={4}>3</GridCell>
-        </Grid> */}
+        </Grid>
         <Button variant="contained" className={classes.button}>
           Default
         </Button>
