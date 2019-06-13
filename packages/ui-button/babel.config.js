@@ -22,12 +22,13 @@
  * SOFTWARE.
  */
 
-import { createGlobalStyle } from 'styled-components'
-
-const GlobalStyle = createGlobalStyle`
-  .main-wrapper {
-    padding: 0;
-  }
-`
-
-export default GlobalStyle
+module.exports = {
+  presets: [[
+    require('@racoon-ui/ui-babel-preset'),
+    {
+      coverage: Boolean(process.env.COVERAGE),
+      esModules: Boolean(process.env.ES_MODULES),
+      removeConsole: process.env.NODE_ENV === 'production'
+    }
+  ]]
+}
