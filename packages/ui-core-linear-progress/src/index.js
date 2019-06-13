@@ -23,18 +23,11 @@
  */
 
 // import PropTypes from 'prop-types'
-// import styled, { ThemeConsumer } from 'styled-components';
-
+import styled from 'styled-components'
+import React from 'react'
 import { LinearProgress } from '@rmwc/linear-progress'
+import withStyles from '@material/linear-progress/dist/mdc.linear-progress.css'
+// import styles from '@material/linear-progress/dist/mdc.linearProgress.js'
+// import styles from '@material/linear-progress/dist/mdc.linearProgress.d.ts'
 
-// const LoadingBase = styled(LinearProgress)`
-//   position: absolute;
-//   bottom: 0;
-// `;
-import * as React from 'react'
-
-// export function LProgress() {
-//   return <LinearProgress />
-// }
-
-export default LinearProgress
+export default withStyles(LinearProgress)

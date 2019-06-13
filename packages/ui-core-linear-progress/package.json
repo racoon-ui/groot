@@ -19,9 +19,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@racoon-ui/ui-babel-preset": "^1"
+    "@racoon-ui/ui-babel-preset": "^1",
+    "css-loader": "^3.0.0"
   },
   "dependencies": {
+    "@material/linear-progress": "^2.3.0",
     "@rmwc/linear-progress": "^5.5.2",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.1",
