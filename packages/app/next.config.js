@@ -22,40 +22,9 @@
  * SOFTWARE.
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withStyles, Button } from '@racoon-ui/ui-core-material'
-import { Grid, GridCell, GridInner } from '@racoon-ui/ui-core-layout-grid'
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-import '@material/layout-grid/dist/mdc.layout-grid.css'
-
-const styles = theme => ({
-  root: {
-    // width: '100%'
-  },
-  button: {
-    margin: theme.spacing.unit
-  }
-})
-
-class Index extends React.Component {
-  render() {
-    const { classes } = this.props
-    return (
-      <div className={classes.root}>
-        <Grid>
-          <GridCell span={4}>1</GridCell>
-          <GridCell span={4}>2</GridCell>
-          <GridCell span={4}>3</GridCell>
-        </Grid>
-      </div>
-    )
+module.exports = {
+  webpack: (config, { dev }) => {
+    config.module.rules.push({ test: /\.css$/, loader: ['css-loader'] })
+    return config
   }
 }
-
-Index.propTypes = {
-  classes: PropTypes.object.isRequired
-}
-
-export default withStyles(styles)(Index)
