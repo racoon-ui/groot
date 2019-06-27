@@ -1,0 +1,26 @@
+{
+  "name": "@racoon-ui/ui-polyfill-loader",
+  "version": "1.0.0",
+  "description": "A webpack loader that generates a customized polyfill",
+  "main": "./index.js",
+  "scripts": {
+    "lint": "ui-test --lint",
+    "lint:fix": "ui-test --lint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racoon-ui/groot.git"
+  },
+  "bugs": "https://github.com/racoon-ui/groot/issues",
+  "license": "MIT",
+  "dependencies": {
+    "@racoon-ui/config-loader": "^1",
+    "@racoon-ui/ui-babel-preset": "^1",
+    "core-js-builder": "^3.0.1",
+    "loader-utils": "^1.2.3",
+    "webpack": "^4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
