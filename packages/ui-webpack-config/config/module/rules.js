@@ -83,7 +83,6 @@ module.exports = [
   },
   {
     test: /\.css$/,
-    include: [/ui-icons/],
     use: [
       'style-loader',
       'css-loader'
