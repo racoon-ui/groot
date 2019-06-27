@@ -22,40 +22,35 @@
  * SOFTWARE.
  */
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-// import registerServiceWorker from './registerServiceWorker';
-import { unregister } from './registerServiceWorker'
+import React, {Fragment} from 'react'
 
-import { HashRouter } from 'react-router-dom'
-import './assets/base.css'
-import Main from './Pages/Main'
-import configureStore from './config/configureStore'
-import { Provider } from 'react-redux'
+import cx from 'classnames'
 
-const store = configureStore()
-const rootElement = document.getElementById('root')
+class SearchBox extends React.Component {
+  constructor(props) {
+    super(props)
 
-const renderApp = Component => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HashRouter>
-        <Component />
-      </HashRouter>
-    </Provider>,
-    rootElement
-  )
+    this.state = {
+      activeSearch: false
+    }
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <div className={cx("search-wrapper", {
+            'active': this.state.activeSearch
+        })}>
+          <div className="input-holder">
+            <input type="text" className="search-input"/>
+            <button onClick={() => this.setState({activeSearch: !this.state.activeSearch})}
+                    className="search-icon"><span/></button>
+          </div>
+          <button onClick={() => this.setState({activeSearch: !this.state.activeSearch})} className="close"/>
+        </div>
+      </Fragment>
+    )
+  }
 }
 
-renderApp(Main)
-
-if (module.hot) {
-  module.hot.accept('./DemoPages/Main', () => {
-    const NextApp = require('./DemoPages/Main').default
-    renderApp(NextApp)
-  })
-}
-unregister()
-
-// registerServiceWorker();
-
+export default SearchBox

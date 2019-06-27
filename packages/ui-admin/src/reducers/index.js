@@ -22,40 +22,8 @@
  * SOFTWARE.
  */
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-// import registerServiceWorker from './registerServiceWorker';
-import { unregister } from './registerServiceWorker'
+import ThemeOptions from './ThemeOptions'
 
-import { HashRouter } from 'react-router-dom'
-import './assets/base.css'
-import Main from './Pages/Main'
-import configureStore from './config/configureStore'
-import { Provider } from 'react-redux'
-
-const store = configureStore()
-const rootElement = document.getElementById('root')
-
-const renderApp = Component => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HashRouter>
-        <Component />
-      </HashRouter>
-    </Provider>,
-    rootElement
-  )
+export default {
+  ThemeOptions
 }
-
-renderApp(Main)
-
-if (module.hot) {
-  module.hot.accept('./DemoPages/Main', () => {
-    const NextApp = require('./DemoPages/Main').default
-    renderApp(NextApp)
-  })
-}
-unregister()
-
-// registerServiceWorker();
-

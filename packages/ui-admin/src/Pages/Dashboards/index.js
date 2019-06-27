@@ -22,40 +22,32 @@
  * SOFTWARE.
  */
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-// import registerServiceWorker from './registerServiceWorker';
-import { unregister } from './registerServiceWorker'
+import React, {Fragment} from 'react'
+import {Route} from 'react-router-dom'
 
-import { HashRouter } from 'react-router-dom'
-import './assets/base.css'
-import Main from './Pages/Main'
-import configureStore from './config/configureStore'
-import { Provider } from 'react-redux'
+// DASHBOARDS
 
-const store = configureStore()
-const rootElement = document.getElementById('root')
+import BasicDashboard from './Basic'
 
-const renderApp = Component => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HashRouter>
-        <Component />
-      </HashRouter>
-    </Provider>,
-    rootElement
-  )
-}
+// Layout
 
-renderApp(Main)
+import AppHeader from '../../Layouts/Header'
+import AppSidebar from '../../Layouts/Sidebar'
+import AppFooter from '../../Layouts/Footer'
 
-if (module.hot) {
-  module.hot.accept('./DemoPages/Main', () => {
-    const NextApp = require('./DemoPages/Main').default
-    renderApp(NextApp)
-  })
-}
-unregister()
+const Dashboards = ({match}) => (
+  <Fragment>
+    <AppHeader/>
+    <div className="app-main">
+      <AppSidebar/>
+      <div className="app-main__outer">
+        <div className="app-main__inner">
+          <Route path={`${match.url}/basic`} component={BasicDashboard}/>
+        </div>
+        <AppFooter/>
+      </div>
+    </div>
+  </Fragment>
+)
 
-// registerServiceWorker();
-
+export default Dashboards

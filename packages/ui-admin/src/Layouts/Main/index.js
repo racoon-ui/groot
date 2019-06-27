@@ -22,40 +22,38 @@
  * SOFTWARE.
  */
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-// import registerServiceWorker from './registerServiceWorker';
-import { unregister } from './registerServiceWorker'
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+import React, {Suspense, lazy, Fragment} from 'react'
 
-import { HashRouter } from 'react-router-dom'
-import './assets/base.css'
-import Main from './Pages/Main'
-import configureStore from './config/configureStore'
-import { Provider } from 'react-redux'
+import {
+    ToastContainer,
+} from 'react-toastify'
 
-const store = configureStore()
-const rootElement = document.getElementById('root')
+const Dashboards = lazy(() => import('../../Pages/Dashboards'))
 
-const renderApp = Component => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HashRouter>
-        <Component />
-      </HashRouter>
-    </Provider>,
-    rootElement
+const AppMain = () => {
+  return (
+    <Fragment>
+      {/* Dashboards */}
+      <Suspense fallback={
+        <div className="loader-container">
+          <div className="loader-container-inner">
+            <h6 className="mt-3">
+              Please wait while we load all the Dashboards examples
+              <small>Because this is a demonstration, we load at once all the Dashboards examples. This wouldnt happen in a real live app!</small>
+            </h6>
+          </div>
+        </div>
+      }>
+        <Route path="/dashboards" component={Dashboards}/>
+      </Suspense>
+
+      <Route exact path="/" render={() => (
+        <Redirect to="/dashboards/basic"/>
+      )}/>
+      <ToastContainer/>
+    </Fragment>
   )
 }
 
-renderApp(Main)
-
-if (module.hot) {
-  module.hot.accept('./DemoPages/Main', () => {
-    const NextApp = require('./DemoPages/Main').default
-    renderApp(NextApp)
-  })
-}
-unregister()
-
-// registerServiceWorker();
-
+export default AppMain
